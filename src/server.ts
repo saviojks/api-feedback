@@ -1,9 +1,9 @@
 import express from "express";
+import { routes } from "./routes";
 
 const app = express();
 
-app.get("/test", (req, res) => {
-  return res.send({ OK: "Tudo okay aqui" });
-});
+app.use(express.json());
+app.use(routes);
 
 app.listen(3000, () => console.log("server Running!!! `-` "));
